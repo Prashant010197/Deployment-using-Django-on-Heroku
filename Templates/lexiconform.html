@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Sentiment Analysis {% endblock title %}
+
+{% block body %}
+<div class="container my-2 py=4">
+    <h3>Let's predict the sentiment of your text</h3>
+    <form method="POST" enctype="multipart/form-data" action="prediction3">
+{% csrf_token %}
+    <div class="form-group">
+        <label for="prediction3">Enter your text as if you were writing a phone review</label>
+        <input type="text" class="form-control" id="prediction3" placeholder="Example: This product was bad" name="prediction3">
+    </div>
+    <div class="container my-2 px-0">
+        <button type="Submit" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+</div>
+{% endblock body %}

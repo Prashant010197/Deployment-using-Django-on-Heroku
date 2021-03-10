@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Salary Prediction {% endblock title %}
+
+{% block body %}
+
+<blockquote class="blockquote text-center">
+    <p class="mb-0 my-2" style="font-size:xx-large;">
+        Surgery for breast cancer is often the last resort method to save patients but the success rates of surgery itself is questionable as women have been recorded dying post-surgery within 5 years of the operation in University of Chicago's Billings Hospital. This project was aimed at building a model that can predict the survival of a breast cancer patient post-surgery using key measures like number of axillary nodes found in the body and the age at which diagnosis was done.
+    </p>
+</blockquote>
+
+<div class="container py=4">
+    <h3>Let's predict your survival based on your age of diagnosis of breast cancer and number of Axillary Nodes</h3>
+    <form method="POST" enctype="multipart/form-data" action="prediction2">
+{% csrf_token %}
+    <div class="form-group">
+        <label for="age">Enter the age at which you were diagnosed with breast cancer here</label>
+        <input type="number" class="form-control" id="age" placeholder="In years" name="age">
+    </div>
+
+    <div class="form-group">
+        <label for="number">Enter the number of Axillary Nodes found in investigation here</label>
+        <input type="number" class="form-control" id="number" name="number">
+    </div>
+
+    <div class="container my-2 px-0">
+        <button type="Submit" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Salary Prediction {% endblock title %}
+
+{% block body %}
+
+<blockquote class="blockquote text-center">
+    <p class="mb-0 my-2" style="font-size:xx-large;">
+        This prediction is made using Simple Linear Regression. In our case, independent variable experience has been seen to be highly positively correlated with the
+        dependent variable salary and so, a linear relationship exists between the pair of variables. The main concept is to make a line fit data points
+        of highly correlated pair of variables such that the root mean square error value is the least. This would mean that we need to make sure that
+        the distance between the fitted regression line and the data points(residuals) is least. Several assumptions are made to make simple linear regression work.
+        Linearity, Independence of variables involved, residuals must be normally distributed are assumptions.
+    </p>
+</blockquote>
+
+<div class="container py=4">
+    <h3>Let's predict your salary based on your experience</h3>
+    <form method="POST" enctype="multipart/form-data" action="prediction">
+{% csrf_token %}
+    <div class="form-group">
+        <label for="prediction">Enter your experience here</label>
+        <input type="text" class="form-control" id="prediction" placeholder="In Rupees" name="prediction">
+    </div>
+    <div class="container my-2 px-0">
+        <button type="Submit" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+</div>
+
+{% if score %}
+<h2>The predicted salary is {{score}}</h2>
+{% endif %}
+{% endblock body %}

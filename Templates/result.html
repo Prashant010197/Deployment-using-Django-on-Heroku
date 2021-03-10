@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Result {% endblock title %}
+
+{% block body %}
+
+    {% if a %}
+        The predicted value is {{a}}
+    <div class="container my-2 px-0">
+        <a class="btn btn-primary" href="/salaryform" role="button">Try again?</a>
+    </div>
+    {% endif %}
+
+    {% if chart %}
+        <img src="data:image/png;base64, {{chart|safe}}" class="d-block w-100" alt="...">
+        <div class="container my-2 px-0">
+            <a class="btn btn-primary" href="/sentiment" role="button">Try again?</a>
+        </div>
+    {% endif %}
+
+    {% if a1 %}
+    <div class="text-center">
+        <h2> The predicted value is {{a1}}.
+            1 means that post surgery, you will live more than 5 years. 0 means that the model predicted that you won't live for more than 5 years</h2>
+
+        <h2 class="text-center"> Decision Trees algorithm was used for this purpose. Decision Trees relies on finding the best split using rules defined by attributes like the information gain, gini index and entropy.
+Data is split further and further based on depth specified. Depth is a hyperparameter for Decision Trees which needs to be tuned.</h2>
+        <a class="btn btn-primary" href="/breastcancerform" role="button">Try again?</a>
+    </div>
+    <blockquote class="blockquote text-center">
+        <p class="mb-0" style="font-size:xx-large;">
+            <a class="btn btn-primary" href="https://www.kaggle.com/gilsousa/habermans-survival-data-set" role="button">Link to the Dataset used for training and evaluation of model</a>
+        </p>
+    </blockquote>
+    {% endif %}
+
+
+
+
+{% endblock body %}
+

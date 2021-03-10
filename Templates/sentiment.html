@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Sentiment Analysis {% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid my-2 px-0">
+<img src="https://source.unsplash.com/1600x600/?technology" class="d-block w-100" alt="...">
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title"> TextBlob based Sentiment Analysis </h1>
+        <ul class="list-styled mt-3 mb-4">
+          <li>Lexical approach using Textblob library</li>
+          <li>This system relies on semantic and grammatical information about words</li>
+          <li>Rules have been written by linguists, who have given scores to words about how negative or positive they are in the range of -1 to 1. Subjectivity ranges from 0 to 1</li>
+        </ul>
+        <div class="container my-2 px-0">
+        <a class="btn btn-primary" href="/lexiconform" role="button">Go</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title"> Algorithmic Sentiment Analysis </small></h1>
+        <ul class="list-styled mt-3 mb-4">
+          <li>Algorithmic modelling based approach</li>
+          <li>Entirely done using machine learning algorithm</li>
+          <li>More accurate than Lexical based approach(NOT OPERATIONAL)</li>
+        </ul>
+        <div class="container my-2 px-0">
+        <a class="btn btn-primary" href="/mlbased" role="button">Go</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+{% endblock body %}

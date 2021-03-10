@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Me {% endblock title %}
+
+{% block body %}
+<div class="container-fluid my-2 px-0">
+<img src="https://source.unsplash.com/1600x600/?phone" class="d-block w-100" alt="...">
+</div>
+
+<blockquote class="blockquote text-center">
+  <p class="my-5" style="font-size:xx-large;">
+    Please fill in the required details and I will contact you.
+  </p>
+</blockquote>
+
+<div class="container py=4">
+
+  <h2 class="text-center"> Contact Details </h2>
+
+  <form method="post" action="/contact">
+  {% csrf_token %}
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Please enter your Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Example: John Doe">
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Please enter your Email address</label>
+    <input type="text" class="form-control" id="email" name="email" placeholder="JohnDoe@example.com">
+    <small id="emailHelp" class="form-text text-muted">I will never share your email with anyone else.</small>
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Please enter your Mobile Number</label>
+    <input type="number" class="form-control" id="phone" name="phone" placeholder="Example: 99999999">
+    <small id="phoneHelp" class="form-text text-muted">I will never share your phone number with anyone else.</small>
+  </div>
+
+  <button class="btn btn-primary my-2" type="submit">Submit</button>
+</div>
+{% endblock body %}
+
